@@ -1,0 +1,1 @@
+#Tarea3 Aplicada: Supuesto de independencia en los errores.
