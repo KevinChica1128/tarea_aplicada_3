@@ -39,3 +39,5 @@ for (i in 1:length(residuales)) {
 runs.test(factor(residualesfactor))
 
 #Prueba Durbin-Watson:
+require("lmtest")
+dwtest(Regresion)
