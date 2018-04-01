@@ -29,10 +29,10 @@ plot(1:500,residuales, type="b",xlim =c(0,100))
 library("tseries")
 residualesfactor<-c()
 for (i in 1:length(residuales)) {
-  if (residuales[i]>0){
+  if (residuales[i]>median(residuales)){
     residualesfactor[i]=1
   }
-  if (residuales[i]<0){
+  if (residuales[i]<median(residuales)){
     residualesfactor[i]=-1
   }
   }
