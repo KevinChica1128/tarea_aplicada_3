@@ -18,10 +18,22 @@ residualesx<-c()
 for (i in 1:length(residuales)) {
   residualesx[i]<-residuales[i-1]
 }
+residualesx[1]=0
 #Prueba gráfica:
 x11()
-plot(residualesx,residuales)
+plot(residualesx,residuales,xlab = "Residuales(t-1)",ylab = "Residuales(t)")
 #Pruebas estaidsticas:
 #Prueba de rachas:
 library("tseries")
-runs.test(residuales)
+residualesfactor<-c()
+for (i in 1:length(residuales)) {
+  if (residuales[i]>0){
+    residualesfactor[i]=1
+  }
+  if (residuales[i]<0){
+    residualesfactor[i]=-1
+  }
+  }
+runs.test(factor(residualesfactor))
+
+#Prueba Durbin-Watson:

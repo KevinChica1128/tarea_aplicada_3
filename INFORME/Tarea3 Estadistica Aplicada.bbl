@@ -1,0 +1,24 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Douglas C.~Montgomery}{2002}{Reg}
+Douglas C.~Montgomery, Elizabeth A.~Peck, G. G.~V.  \harvardyearleft
+  2002\harvardyearright , {\em {Introducción al análisis de regresión lineal}},
+  tercera edn, Compañía Editorial Continental.
+
+\harvarditem{{R Core Team}}{2017}{R}
+{R Core Team}  \harvardyearleft 2017\harvardyearright , {\em R: A Language and
+  Environment for Statistical Computing}, R Foundation for Statistical
+  Computing, Vienna, Austria.
+\newline\harvardurl{https://www.R-project.org/}
+
+\harvarditem{Trapletti \harvardand\ Hornik}{2018}{Rachas}
+Trapletti, A. \harvardand\ Hornik, K.  \harvardyearleft 2018\harvardyearright ,
+  {\em tseries: Time Series Analysis and Computational Finance}.
+\newblock R package version 0.10-43.
+\newline\harvardurl{https://CRAN.R-project.org/package=tseries}
+
+\harvarditem{Uriel}{2013}{Dummy}
+Uriel, E.  \harvardyearleft 2013\harvardyearright , `Análisis de regresión
+  múltiple con información cualitativa'.
+
+\end{thebibliography}
