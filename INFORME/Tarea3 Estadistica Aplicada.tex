@@ -149,32 +149,43 @@ $$Y = 57720.52 + 24261.20X_{1} + 3443.94X_{2} + 19.09X_{3} - 67.72X_{4} - 121.66
 ~\\El efecto que produce la correlación entre errores en el modelo de regresión, es que tiende a cambiar la matriz de varianzas y covarianzas $\sigma^2 I$ por $\sigma^2 V$, y esto tiene como consecuencia la perdida de la optimalidad del estimador de mínimos cuadrados ordinarios (MCO), es decir, los estimadores obtenidos por este método de estimación ya no son estimadores óptimos. La solución a este problema es utilizar mínimos cuadrados generalizados para tratar de recuperar la optimalidad de los estimadores, pero, este método nos exige conocer la matriz V, la cuál nunca conocemos, y estimarla resulta muy complicado en la practica.
 ~\\ El efecto de la dependencia puede ser un un problema muy grave y difícil de corregir, por ello es importante prevenirlo cuando los datos se están recopilando. El método más eficaz para prevenir la dependencia es realizar un procedimiento apropiado de aleatorización.
 
-~\\ Para evaluar el cumplimiento o incumplimiento de este supuesto nos vamos a basar en una prueba gráfica y en dos pruebas estadísticas. La prueba gráfica consiste básicamente en realizar un gráfica de las parejas residuales ($e_{t-1}$,$e_{t}$) y observar la existencia de algún tipo de relación. Las pruebas estadísticas que vamos a aplicar son dos, la prueba de rachas y la prueba de Durbin-Watson, la explicación teórica de estas pruebas se dará en el literal 3.
+~\\ Para evaluar el cumplimiento o incumplimiento de este supuesto nos vamos a basar en una prueba gráfica y en dos pruebas estadísticas. La prueba gráfica consiste básicamente en realizar una gráfica de autocorrelación de los residuales, llamado correlograma  y observar si estas correlaciones se salen del intervalo de confianza. Las pruebas estadísticas que vamos a aplicar son dos, la prueba de rachas y la prueba de Durbin-Watson, la explicación teórica de estas pruebas se dará en el punto 3 (literal 5).
 \section{Punto 2:Aplicación de las pruebas para evaluar el supuesto}
 \begin{itemize}
 \item Prueba gráfica:
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[scale=0.45]{FigurasUV/4.pdf}
+  \caption{Correlograma de los residuales}\label{figura1}
+\end{figure}
+~\\ En esta gráfica se puede observar que la autocorrelación de los errores, es distinta de cero, ya que hay varías barras que se salen del intervalo (lineas azules) que fue construido con un 95\% de confianza, entonces, se puede rechazar $H_{0}$ y concluir que si existe algún tipo de correlación en los errores.
+
 \item Prueba de Rachas: Esta prueba se realizo con la ayuda del software \citeasnoun{R} con el paquete \citeasnoun{Rachas}. Se podría realizar manualmente, pero era algo tedioso por la cantidad de datos sobre los cuales se debe aplicar la prueba, recordemos que lo que se busca es que los residuales sean completamente aleatorios, en otras palabras, que entre ellos no exista algún tipo de correlación.
-~\\ La prueba realizada fue de dos colas, por lo tanto, las hipotesis planteadas son del siguiente tipo:
+~\\ La prueba realizada fue de dos colas, por lo tanto, las hipótesis planteadas son del siguiente tipo:
 \begin{center}
 ~\\ $H_{0}:$La muestra es aleatoria (Los residuales son independientes)
 ~\\ $H_{1}:$La muestra no es aleatoria (Los residuales no son independientes)
 \end{center}
-~\\El resultado de R nos arroja el p-valor, el cual fue $3.219*10^{-14}$ o lo que es lo mismo 0.00000000000003219, lo cuál es un valor p demasiado pequeño, que nos lleva a rechazar $H_{0}$ y concluimos que los residuales no son independientes, o que tienen una correlación entre ellos.
+~\\El resultado de R nos arroja el cuantil de la aproximación del estadístico a la normal estándar que fue Z=-7.5892 y el p-valor, el cual fue $3.219*10^{-14}$ o lo que es lo mismo 0.00000000000003219, lo cuál es un valor p demasiado pequeño, que nos lleva a rechazar $H_{0}$ y concluimos que los residuales no son independientes, o que tienen una correlación entre ellos.
 
-\item Prueba de Durbin - Watson:
+\item Prueba de Durbin - Watson: Esta prueba también fue realizada en \citeasnoun{R} con el paquete \citeasnoun{Lm}. Al igual que la anterior, esta prueba fue realizada de dos colas o bilateral, ya que nos interesa si los residuales tienen correlación o no, es decir, por ahora no nos interesa saber si dicha correlación es menor o mayor que cero. Por lo tanto, las hipótesis planteadas fueron las siguientes:
+\begin{center}
+~\\ $H_{0}:\rho=0$ (La autocorrelación en los residuales es cero)
+~\\ $H_{1}:\rho \neq0$ (La autocorrelación en los residuales es diferente de cero)
+\end{center}
 \end{itemize}
-
+~\\El resultado de R nos arroja el estadístico de prueba que fue DW=1.3869 y el p valor el cual fue, p-value$= 2.614*10^{-12}$ o lo que es lo mismo 0.000000000002614, el cuál es demasiado pequeño, esto nos dice que en la muestra hay mucha evidencia en contra de la hipotesis nula, por lo cuál esta se rechaza y concluimos que si hay autocorrelación en los errores.
 \section{Punto 3:Descripción de las pruebas:}
-
+\begin{itemize}
+\item Prueba gráfica (correlograma):
+\item Prueba de rachas:
+\item Prueba de Durbin-Watson:
+\end{itemize}
 
 \section{Punto 4:Conclusiones del modelo ajustado con respecto al supuesto}
 
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[scale=0.45]{FigurasUV/3.pdf}
-  \caption{Gráfica de dispersión con la recta de regresión ajustada por sexo}\label{figura1}
-\end{figure}
+
 
 
 

@@ -21,23 +21,36 @@ for (i in 1:length(residuales)) {
 residualesx[1]=0
 #Prueba gráfica:
 x11()
-plot(residualesx,residuales,xlab = "Residuales(t-1)",ylab = "Residuales(t)")
+acf(residuales,ci=0.95,lag.max=200,type = c("correlation"),main="Correlograma",ylab="Autocorrelación",xlab="Residuales")
+
+
 x11()
-plot(1:500,residuales, type="b",xlim =c(0,100))
+par(mfrow=c(2,1))
+plot(1:500,residuales,type="o",xlim=c(0,250))
+plot(1:500,residuales,type="o",xlim = c(250,500))
+
+x11()
+plot(residualesx,residuales,xlim=c(100000,200000))
+
+
 #Pruebas estaidsticas:
 #Prueba de rachas:
 library("tseries")
 residualesfactor<-c()
 for (i in 1:length(residuales)) {
-  if (residuales[i]>median(residuales)){
+  if (residuales[i]>0){
     residualesfactor[i]=1
   }
-  if (residuales[i]<median(residuales)){
+  if (residuales[i]<0){
     residualesfactor[i]=-1
   }
   }
 runs.test(factor(residualesfactor))
 
 #Prueba Durbin-Watson:
-require("lmtest")
-dwtest(Regresion)
+install.packages("lmtest")
+library("lmtest")
+dwtest(Regresion,alternative = c("two.sided"))
+
+#Prueba de Ljung-Box:
+Box.test(residuales)
