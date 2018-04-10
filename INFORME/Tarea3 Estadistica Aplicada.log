@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.9.23)  2 APR 2018 10:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.9.23)  10 APR 2018 18:49
 entering extended mode
 **"./Tarea3 Estadistica Aplicada.tex"
 ("Tarea3 Estadistica Aplicada.tex"
@@ -395,41 +395,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 141--141
 [1
 
 {C:/Users/KEVINSTEVEN/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 155.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 156.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 156.
 
 <FigurasUV/4.pdf, id=19, 1027.84pt x 545.03625pt>
 File: FigurasUV/4.pdf Graphic file (type pdf)
  <use FigurasUV/4.pdf>
-Package pdftex.def Info: FigurasUV/4.pdf used on input line 158.
+Package pdftex.def Info: FigurasUV/4.pdf used on input line 159.
 (pdftex.def)             Requested size: 462.52373pt x 245.26405pt.
 
-Overfull \hbox (7.27965pt too wide) in paragraph at lines 158--159
+Overfull \hbox (7.27965pt too wide) in paragraph at lines 159--160
  [][] 
  []
 
-[2 <./FigurasUV/4.pdf>]
-
-LaTeX Warning: Citation 'Lm' on page 3 undefined on input line 171.
-
-("Tarea3 Estadistica Aplicada.bbl") [3] ("Tarea3 Estadistica Aplicada.aux"
+[2 <./FigurasUV/4.pdf>] [3] [4] [5] ("Tarea3 Estadistica Aplicada.bbl")
+[6] ("Tarea3 Estadistica Aplicada.aux"
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 5291 strings out of 493334
- 73418 string characters out of 3139234
- 147929 words of memory out of 3000000
- 8708 multiletter control sequences out of 15000+200000
+ 5295 strings out of 493334
+ 73468 string characters out of 3139234
+ 148928 words of memory out of 3000000
+ 8712 multiletter control sequences out of 15000+200000
  20261 words of font info for 59 fonts, out of 3000000 for 9000
  1145 hyphenation exceptions out of 8191
- 43i,9n,40p,698b,419s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,9n,40p,824b,419s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\KEVINSTEVEN\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\
 dpi600\ecti1000.pk> <C:\Users\KEVINSTEVEN\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
 our\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\KEVINSTEVEN\AppData\Local\MiKTeX\
@@ -446,14 +443,18 @@ KEVINSTEVEN\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx144
 c\dpi600\ecrm0900.pk> <C:\Users\KEVINSTEVEN\AppData\Local\MiKTeX\2.9\fonts\pk\l
 jfour\jknappen\ec\dpi600\ecbx0900.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on "Tarea3 Estadistica Aplicada.pdf" (3 pages, 174133 bytes).
+sfonts/cmextra/cmex7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+mi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmsy7.pfb>
+Output written on "Tarea3 Estadistica Aplicada.pdf" (6 pages, 236686 bytes).
 PDF statistics:
- 372 PDF objects out of 1000 (max. 8388607)
+ 431 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

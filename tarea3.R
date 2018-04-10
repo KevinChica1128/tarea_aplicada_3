@@ -53,4 +53,6 @@ library("lmtest")
 dwtest(Regresion,alternative = c("two.sided"))
 
 #Prueba de Ljung-Box:
-Box.test(residuales)
+Box.test(residuales,type ="Ljung-Box")
+
+
