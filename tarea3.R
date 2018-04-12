@@ -21,8 +21,14 @@ for (i in 1:length(residuales)) {
 residualesx[1]=0
 #Prueba gráfica:
 x11()
-acf(residuales,ci=0.95,lag.max=200,type = c("correlation"),main="Correlograma",ylab="Autocorrelación",xlab="Residuales")
+acf(residuales,ci=0.95,lag.max=200,type = c("correlation"),main="Correlograma de los residuos",ylab="Autocorrelación",xlab="Retardo")
 
+
+
+x11()
+par(mfrow=c(2,1))
+acf(residuales)
+pacf(residuales)
 
 x11()
 par(mfrow=c(2,1))
@@ -55,4 +61,6 @@ dwtest(Regresion,alternative = c("two.sided"))
 #Prueba de Ljung-Box:
 Box.test(residuales,type ="Ljung-Box")
 
-
+#Otra gráfica que podría ser útil:
+x11()
+plot(1:500,residuales,type = "b",xlim = c(0,250))

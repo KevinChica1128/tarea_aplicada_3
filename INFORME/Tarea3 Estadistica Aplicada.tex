@@ -231,7 +231,7 @@ La distribución de D es simétrica con respecto a 2. Así que un valor de D cercan
 \item[-] Si $d > d_{U,\alpha}$ no hay evidencia estadística de que los términos de error estén autocorrelacionados positivamente.
 \item[-] Si $d_{L,\alpha} < d < d_{U,\alpha}$ la prueba no es concluyente.
 \item Prueba de Ljung-Box:La prueba de Ljung-Box (llamada así por Greta M. Ljung y George E. P. Box) es un tipo de prueba estadística de si un grupo cualquiera de autocorrelaciones de una serie de tiempo son diferentes de cero. En lugar de probar la aleatoriedad en cada retardo distinto, esta prueba la aleatoriedad "en general" basado en un número de retardos.
-\end{itemize}
+
 ~\\En la prueba de Ljung-Box se puede definir o plantear las hipótesis de la siguiente manera:
 
 ~\\$H_{0}:$Los datos se distribuyen de forma independiente (es decir, las correlaciones en la población de la que se toma la muestra son 0, de modo que cualquier correlación observada en los datos es el resultado de la aleatoriedad del proceso de muestreo).
@@ -243,6 +243,7 @@ La distribución de D es simétrica con respecto a 2. Así que un valor de D cercan
 ~\\ \textbf{Región de rechazo:} Para un nivel de significancia $\alpha$ la región critica para rechazar la hipótesis de aleatoriedad es: $Q>\chi^{2}_{1-\alpha,h}$
 
 ~\\donde $\displaystyle \chi _{1-\alpha ,h}^{2}$ es el $\alpha$-cuantil de la distribución chi-cuadrado con m grados de libertad.
+\end{itemize}
 \section{Punto 4:Conclusiones del modelo ajustado con respecto al supuesto}
 ~\\ Observando las 4 pruebas realizadas, podemos ver que en la primera( la prueba gráfica), hay muchas barras o correlaciones que se nos salen de los intervalos de confianza, por lo cuál se rechazo $H_{0}$ y se concluyo que con respecto a esa prueba no hay independencia en los errores, y con respecto a las pruebas estadísticas como tal (Rachas, Durbin-watson y Ljung-Box), vimos que los p valores de las tres pruebas son demasiado bajos, mucho mas bajos que cualquier nivel de significancia propuesto, por lo cuál en esas tres pruebas también se rechazo $H_{0}$, lo cuál confirma la existencia de correlación en los errores del modelo.
 
@@ -254,7 +255,9 @@ La distribución de D es simétrica con respecto a 2. Así que un valor de D cercan
 
 
 \nocite{Behar}
-
+\nocite{supuestos}
+\nocite{Reg}
+\nocite{F}
 % //// --------------------------------------------------------------------------------
 % -------------------------------------------------------------------------------------
 % Fin del cuerpo del documento
