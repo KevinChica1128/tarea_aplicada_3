@@ -128,7 +128,7 @@ de grado.tex}) and can be used as a guideline just replacing its contents. It is
 % Título de la primera sección
 % **** --------------------------------------------------------------------------------
 \section{Introducción}
-~\\ En este trabajo evaluaremos el supuesto de independencia en los errores del modelo lineal ajustado para los 500 datos seleccionados de la base de datos 'cadata'. Se dará una presentación formal del supuesto de independencia de los errores y se mostrara la consecuencia que tiene el incumplimiento de este, además, se aplicaran pruebas tanto gráficas como estadísticas para verificar el incumplimiento o cumplimiento de este supuesto en nuestro modelo lineal ajustado y finalmente, se concluirá acerca de nuestro modelo teniendo en cuenta los resultados de las pruebas aplicadas.
+~\\ En este trabajo evaluaremos el supuesto de independencia en los errores del modelo lineal ajustado para los 500 datos seleccionados de la base de datos 'cadata'. Se dará una presentación formal del supuesto y se mostraran algunas consecuencias que tiene el incumplimiento de este, además, se aplicaran pruebas tanto gráficas como estadísticas para verificar el incumplimiento o cumplimiento de este supuesto en nuestro modelo lineal ajustado y finalmente, se concluirá acerca del modelo teniendo en cuenta los resultados de las pruebas aplicadas.
 \section{Modelo ajustado}
 ~\\ El modelo ajustado sobre el cuál se va a validar el supuesto de independencia en los errores, es el modelo que se ajusto en la tarea 1, que pretendía explicar la variable $Y=$'Valor mediano de las viviendas' con las variables explicativas $X_{1}=$'Ingreso mediano',$X_{2}=$'Edad mediana de la vivienda',$X_{3}=$'Total de habitaciones',$X_{4}=$'Total de dormitorios',$X_{5}=$'Población' y $X_{6}=$'Hogares'. El modelo ajustado para estas variables, sin hacer transformación ni selección de estas es:
 $$Y = 57720.52 + 24261.20X_{1} + 3443.94X_{2} + 19.09X_{3} - 67.72X_{4} - 121.66X_{5} +
@@ -150,7 +150,7 @@ $$Y = 57720.52 + 24261.20X_{1} + 3443.94X_{2} + 19.09X_{3} - 67.72X_{4} - 121.66
 ~\\ El efecto de la dependencia puede ser un un problema muy grave y difícil de corregir, por ello es importante prevenirlo cuando los datos se están recopilando. El método más eficaz para prevenir la dependencia es realizar un procedimiento apropiado de aleatorización.
 ~\\Además, si los errores están correlacionados, entonces la regresión de los mínimos cuadrados puede subestimar el error estándar de los coeficientes. Errores estándar subestimados pueden hacer que sus predictores parezcan significativos, cuando en realidad no lo son.
 
-~\\ Para evaluar el cumplimiento o incumplimiento de este supuesto nos vamos a basar en una prueba gráfica y en dos pruebas estadísticas. La prueba gráfica consiste básicamente en realizar una gráfica de autocorrelación de los residuales, llamado correlograma  y observar si estas correlaciones se salen del intervalo de confianza. Las pruebas estadísticas que vamos a aplicar son tres, la prueba de rachas, la prueba de Durbin-Watson y la prueba de Ljung-Box, la explicación teórica de estas pruebas se dará en el punto 3 (literal 5).
+~\\ Para evaluar el cumplimiento o incumplimiento de este supuesto nos vamos a basar en una prueba gráfica y en tres pruebas estadísticas. La prueba gráfica consiste básicamente en realizar una gráfica de autocorrelación de los residuales, llamado correlograma  y observar si estas correlaciones se salen del intervalo de confianza. Las pruebas estadísticas que vamos a aplicar son, la prueba de rachas, la prueba de Durbin-Watson y la prueba de Ljung-Box, la explicación teórica de estas pruebas se dará en el punto 3 (literal 5).
 \section{Punto 2:Aplicación de las pruebas para evaluar el supuesto}
 \begin{itemize}
 \item Prueba gráfica:
@@ -178,16 +178,16 @@ $$Y = 57720.52 + 24261.20X_{1} + 3443.94X_{2} + 19.09X_{3} - 67.72X_{4} - 121.66
 ~\\El resultado de R nos arroja el estadístico de prueba que fue DW=1.3869 y el p valor el cual fue, p-value$= 2.614*10^{-12}$ o lo que es lo mismo 0.000000000002614, el cuál es demasiado pequeño, esto nos dice que en la muestra hay mucha evidencia en contra de la hipotesis nula, por lo cuál esta se rechaza y concluimos que si hay autocorrelación en los errores.
 
 \item Prueba de Ljung-Box: Esta prueba también fue realizada en R, y plantea las siguientes dos hipotesis:
-\begin{center}
+
 ~\\ $H_{0}:$Los datos se distribuyen de forma independiente (es decir, las correlaciones en la población de la que se toma la muestra son 0, de modo que cualquier correlación observada en los datos es el resultado de la aleatoriedad del proceso de muestreo).
 ~\\ $H_{1}:$Los datos no se distribuyen de forma independiente.
-\end{center}
-\end{itemize}
 
-~\\Aplicando esta prueba en R, nos arroja el estadistico de prueba chi-cuadrado que fue $X^2=46.826$ y el valor p$=7.759*10^{-12}$ o 0.000000000007759, el cuál es un valor p demasiado bajo, muchisimo menor que cualquier nivel de significancia dado, esto nos indica que en la muestra(los residuales) hay demasiada evidencia en contra de la hipotesis nula, es decir, los datos dan evidencia de que los residuales no se distribuyen de forma independiente, por lo cuál se rechaza $H_{0}$.
+
+~\\Aplicando esta prueba en R, nos arroja el estadístico de prueba chi-cuadrado que fue $X^2=46.826$ y el valor p$=7.759*10^{-12}$ o 0.000000000007759, el cuál es un valor p demasiado bajo, muchísimo menor que cualquier nivel de significancia dado, esto nos indica que en la muestra(los residuales) hay demasiada evidencia en contra de la hipótesis nula, es decir, los datos dan evidencia de que los residuales no se distribuyen de forma independiente, por lo cuál se rechaza $H_{0}$.
+\end{itemize}
 \section{Punto 3:Descripción de las pruebas:}
 \begin{itemize}
-\item Prueba gráfica (correlograma): Esta gráfica nos muestra unas barras que corresponden a las correlaciones entre el residual $e_{i}$ y el residual $e_{i-1}$, básicamente la decisión consiste en generar un intervalo para dichas correlaciones y observar cuantos de ellos se salen de ese intervalo, si varias barras se salen de dicho intervalo, hay evidencia de que las correlaciones entre los errores son muy fuertes, por lo cual, no se puede decir que ellos son independientes. Está prueba es bastante subjetiva, ya que depende mucho de la experiencia y de la capacidad de la persona que la aplica para tomar su decisión sobre la validación del supuesto. Por lo cuál es preferible aplicar pruebas estadísticas como tal, como las siguientes tres que se van a describir.
+\item Prueba gráfica (correlograma): Esta gráfica nos muestra unas barras que corresponden a las correlaciones entre el residual $e_{i}$ y el residual $e_{i-k}$,donde k es la distancia entre la posición de los errores sobre la cuál se quiere observar tal correlación, básicamente la decisión consiste en generar un intervalo para dichas correlaciones y observar cuantos de ellos se salen de ese intervalo, si varias barras se salen de dicho intervalo, hay evidencia de que las correlaciones entre los errores son muy fuertes, por lo cual, no se puede decir que ellos son independientes. Está prueba es bastante subjetiva, ya que depende mucho de la experiencia y de la capacidad de la persona que la aplica para tomar su decisión sobre la validación del supuesto. Por lo cuál es preferible aplicar pruebas estadísticas como tal, como las siguientes tres que se van a describir.
 \item Prueba de Rachas:Para entender esta prueba primero se debe definir que es una racha. Dada una sucesión de n observaciones de una variable que solo puede tomar dos valores, una racha es una sucesión de uno o más datos con el mismo valor que están seguidos y precedidos por datos con el otro valor, o por ningún dato si se encuentran en el inicio o el final de la sucesión.
 ~\\ Ejemplo: En la sucesión A BBB AA BB A B se presentan 6 rachas.
 ~\\ Como se planteó, el problema que se desea resolver es decidir si el proceso mediante el cual se genera la sucesión pude considerarse aleatorio, tomando a la muestra como una sucesión de observaciones; se quiere conocer si ésta es aleatoria. Las hipótesis a considerar son:
@@ -197,10 +197,10 @@ $$Y = 57720.52 + 24261.20X_{1} + 3443.94X_{2} + 19.09X_{3} - 67.72X_{4} - 121.66
 \end{center}
 ~\\Muestra aleatoria es aquella que proviene de una misma distribución y las observaciones son independientes.
 
-~\\ \textbf{Estadistico de prueba:} El estadistico de prueba es el número total de rachas, R, en la sucesión. Si llamamos $R_{1}$ y $R_{2}$ a las variables aleatorias número de rachas del tipo 1 (evento A) y del tipo 2 (evento B) respectivamente, entonces la el estadistico de prueba número total de rachas R será:
+~\\ \textbf{Estadístico de prueba:} El estadístico de prueba es el número total de rachas, R, en la sucesión. Si llamamos $R_{1}$ y $R_{2}$ a las variables aleatorias número de rachas del tipo 1 (evento A) y del tipo 2 (evento B) respectivamente, entonces la el estadístico de prueba número total de rachas R será:
 $$R=R_{1}+R_{2}$$
 
-~\\ \textbf{Distribución del estadistico de prueba R:}Su distribución bajo la hipótesis nula $H_{0}$ esta dada por:
+~\\ \textbf{Distribución del estadístico de prueba R:}Su distribución bajo la hipótesis nula $H_{0}$ esta dada por:
 \begin{center}
 ~\\$P\left\lbrace{R=r}\right\rbrace=\frac{2\binom{n_{1}-1}{\frac{r}{2}-1}\binom{n_{2}-1}{\frac{r}{2}-1}}{\binom{n_{1}+n_{2}}{n_{1}}}$ si r es par
 
@@ -216,12 +216,12 @@ $$Z=\frac{R-\left(\frac{2n_{1}n_{2}}{n_{1}+n_{2}}+1\right)}{\sqrt{\frac{2n_{1}n_
 ~\\ $R>R_{n_{1},n_{2};(1-\frac{\alpha}{2})}$ o $R<R_{n_{1},n_{2};\frac{\alpha}{2}}$
 \end{center}
 ~\\Donde la parte derecha de cada inecuación son los percentiles $(1-\frac{\alpha}{2})$ y $\frac{\alpha}{2}$ de la distribución del número de rachas R, cuando hay $n_{1}$ observaciones del tipo A y $n_{2}$ del tipo B.
-\item Prueba de Durbin-Watson: El Test de Durbin-Watson permite evaluar si existe autocorrelación en una Regresión lineal, sea simple o múltiple. Con ello se pretende ver si los valores presentan algún tipo de dependencia en cuanto al orden de obtención. Las hipotesis que se plantean son las siguientes:
+\item Prueba de Durbin-Watson: El Test de Durbin-Watson permite evaluar si existe autocorrelación en una Regresión lineal, sea simple o múltiple. Con ello se pretende ver si los valores presentan algún tipo de dependencia en cuanto al orden de obtención. Las hipótesis que se plantean son las siguientes:
 \begin{center}
 ~\\$H_{0}:\rho=0$
 ~\\$H_{1}:\rho\neq 0$
 \end{center}
-~\\ \textbf{Estadístico de prueba:}El estadístico de Durbin-Watson (D) está condicionado según el orden de las observaciones. El estadístico de Durbin-Watson determina si la correlación entre los términos de error adyacentes es o no es igual a cero. este estadistico esta dado por : $D=\frac{\sum\limits_{t=2}^{n}(e_{t}-e_{t-1})^2}{\sum\limits_{t=1}^{n}e_{t}^2}$ donde $e_{t}$ es el residuo t-esimo o a tiempo t.
+~\\ \textbf{Estadístico de prueba:}El estadístico de Durbin-Watson (D) está condicionado según el orden de las observaciones. El estadístico de Durbin-Watson determina si la correlación entre los términos de error adyacentes es o no es igual a cero. este estadístico esta dado por : $D=\frac{\sum\limits_{t=2}^{n}(e_{t}-e_{t-1})^2}{\sum\limits_{t=1}^{n}e_{t}^2}$ donde $e_{t}$ es el residuo t-esimo o a tiempo t.
 
 ~\\D varía entre 0 y 4. Si D esta cerca de 0 los errores están correlacionados positivamente. Si D está cerca de 4 entonces la correlación es negativa.
 La distribución de D es simétrica con respecto a 2. Así que un valor de D cercano a 2 indica que no hay correlación de los errores. 
@@ -237,7 +237,7 @@ La distribución de D es simétrica con respecto a 2. Así que un valor de D cercan
 ~\\$H_{0}:$Los datos se distribuyen de forma independiente (es decir, las correlaciones en la población de la que se toma la muestra son 0, de modo que cualquier correlación observada en los datos es el resultado de la aleatoriedad del proceso de muestreo).
 ~\\$H_{1}:$ Los datos no se distribuyen de forma independiente.
 
-~\\ \textbf{Estadistico de prueba:} El estadistico de prueba es: $Q=n(n+2)\sum\limits_{k=1}^{h}\frac{\hat{\rho_{k}^{2}}}{n-k}$
+~\\ \textbf{Estadístico de prueba:} El estadístico de prueba es: $Q=n(n+2)\sum\limits_{k=1}^{h}\frac{\hat{\rho_{k}^{2}}}{n-k}$
 ~\\ donde n es el tamaño de la muestra, $\displaystyle {\hat {\rho }}_{k}$  es la autocorrelación de la muestra en el retraso k y h es el número de retardos que se están probando.
 
 ~\\ \textbf{Región de rechazo:} Para un nivel de significancia $\alpha$ la región critica para rechazar la hipótesis de aleatoriedad es: $Q>\chi^{2}_{1-\alpha,h}$

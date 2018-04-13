@@ -26,11 +26,7 @@
 \begin{frame}
 \frametitle{Introducción}
 ~\\En esta presentación evaluaremos el supuesto de independencia en los errores del modelo lineal ajustado para
-los 500 datos seleccionados de la base de datos 'cadata'. Se dará una presentación formal del supuesto de
-independencia de los errores y se mostrara la consecuencia que tiene el incumplimiento de este, además,
-se aplicaran pruebas tanto gráficas como estadísticas para verificar el incumplimiento o cumplimiento
-de este supuesto en nuestro modelo lineal ajustado y finalmente, se concluirá acerca de nuestro modelo
-teniendo en cuenta los resultados de las pruebas aplicadas.
+los 500 datos seleccionados de la base de datos 'cadata'. Se dará una presentación formal del supuesto y se mostrará la consecuencia que tiene el incumplimiento de este, además, se aplicaran pruebas tanto gráficas como estadísticas para verificar el incumplimiento o cumplimiento de este supuesto en nuestro modelo lineal ajustado y finalmente, se concluirá acerca del modelo teniendo en cuenta los resultados de las pruebas aplicadas.
 \end{frame}
 
 \begin{frame}
@@ -103,7 +99,7 @@ $$+315.92X_{6}$$
 \begin{frame}
 \frametitle{Descripción y resultados de las pruebas aplicadas}
 \begin{itemize}
-\item Prueba gráfica (correlograma): Esta gráfica nos muestra unas barras que corresponden a las correlaciones entre el residual $e_{i}$ y el residual $e_{i-1}$, básicamente la decisión consiste en generar un intervalo para dichas correlaciones y observar cuantos de ellos se salen de ese intervalo, si varias barras se salen de dicho intervalo, hay evidencia de que las correlaciones entre los errores son muy fuertes, por lo cual, no se puede decir que ellos son independientes. Está prueba es bastante subjetiva, ya que depende mucho de la experiencia y de la capacidad de la persona que la aplica para tomar su decisión sobre la validación del supuesto. Por lo cuál es preferible aplicar pruebas estadísticas como tal, como las siguientes tres que se van a describir.
+\item Prueba gráfica (correlograma): Esta gráfica nos muestra unas barras que corresponden a las correlaciones entre el residual $e_{i}$ y el residual $e_{i-k}$,donde k es la distancia entre la posición de los errores sobre la cuál se quiere observar tal correlación, básicamente la decisión consiste en generar un intervalo para dichas correlaciones y observar cuantos de ellos se salen de ese intervalo, si varias barras se salen de dicho intervalo, hay evidencia de que las correlaciones entre los errores son muy fuertes, por lo cual, no se puede decir que ellos son independientes. Está prueba es bastante subjetiva, ya que depende mucho de la experiencia y de la capacidad de la persona que la aplica para tomar su decisión sobre la validación del supuesto. Por lo cuál es preferible aplicar pruebas estadísticas como tal, como las siguientes tres que se van a describir.
 \end{itemize}
 \end{frame}
 
@@ -126,13 +122,13 @@ $$+315.92X_{6}$$
 ~\\ \textbf{Hipótesis:} Las hipótesis que se plantean en esta prueba son:
 ~\\$H_{0}:$La muestra es aleatoria
 ~\\$H_{1}:$La muestra no es aleatoria
-~\\ \textbf{Estadistico de prueba:} El estadistico de prueba es el número total de rachas, R, en la sucesión.
+~\\ \textbf{Estadístico de prueba:} El estadístico de prueba es el número total de rachas, R, en la sucesión.
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Descripción y resultados de las pruebas aplicadas}
-~\\ \textbf{Distribución del estadistico de prueba R:}Su distribución bajo la hipótesis nula $H_{0}$ esta dada por:
+~\\ \textbf{Distribución del estadístico de prueba R:}Su distribución bajo la hipótesis nula $H_{0}$ esta dada por:
 ~\\$P\left\lbrace{R=r}\right\rbrace=\frac{2\binom{n_{1}-1}{\frac{r}{2}-1}\binom{n_{2}-1}{\frac{r}{2}-1}}{\binom{n_{1}+n_{2}}{n_{1}}}$ si r es par
 
 ~\\$P\left\lbrace{R=r}\right\rbrace=\frac{\binom{n_{1}-1}{\frac{r-1}{2}-1}\binom{n_{2}-1}{\frac{r-1}{2}}+\binom{n_{1}-1}{\frac{r-1}{2}}\binom{n_{2}-1}{\frac{r-1}{2}-1}}{\binom{n_{1}+n_{2}}{n_{1}}}$ si r es impar
@@ -159,10 +155,10 @@ $$Z=\frac{R-\left(\frac{2n_{1}n_{2}}{n_{1}+n_{2}}+1\right)}{\sqrt{\frac{2n_{1}n_
 \begin{frame}
 \frametitle{Descripción y resultados de las pruebas aplicadas}
 \begin{itemize}
-\item Prueba de Durbin-Watson: El Test de Durbin-Watson permite evaluar si existe autocorrelación en una Regresión lineal, sea simple o múltiple. Con ello se pretende ver si los valores presentan algún tipo de dependencia en cuanto al orden de obtención. Las hipotesis que se plantean son las siguientes:
+\item Prueba de Durbin-Watson: El Test de Durbin-Watson permite evaluar si existe autocorrelación en una Regresión lineal, sea simple o múltiple. Con ello se pretende ver si los valores presentan algún tipo de dependencia en cuanto al orden de obtención. Las hipótesis que se plantean son las siguientes:
 ~\\$H_{0}:\rho=0$
 ~\\$H_{1}:\rho\neq 0$
-~\\ \textbf{Estadístico de prueba:}El estadístico de Durbin-Watson (D) está condicionado según el orden de las observaciones. El estadístico de Durbin-Watson determina si la correlación entre los términos de error adyacentes es o no es igual a cero. este estadistico esta dado por : $D=\frac{\sum\limits_{t=2}^{n}(e_{t}-e_{t-1})^2}{\sum\limits_{t=1}^{n}e_{t}^2}$ donde $e_{t}$ es el residuo t-esimo o a tiempo t.
+~\\ \textbf{Estadístico de prueba:}El estadístico de Durbin-Watson (D) está condicionado según el orden de las observaciones. El estadístico de Durbin-Watson determina si la correlación entre los términos de error adyacentes es o no es igual a cero. este estadístico esta dado por : $D=\frac{\sum\limits_{t=2}^{n}(e_{t}-e_{t-1})^2}{\sum\limits_{t=1}^{n}e_{t}^2}$ donde $e_{t}$ es el residuo t-esimo o a tiempo t.
 \end{itemize}
 \end{frame}
 
@@ -202,7 +198,7 @@ La distribución de D es simétrica con respecto a 2. Así que un valor de D cer
 
 \begin{frame}
 \frametitle{Descripción y resultados de las pruebas aplicadas}
-~\\ \textbf{Estadistico de prueba:} El estadistico de prueba es: $Q=n(n+2)\sum\limits_{k=1}^{h}\frac{\hat{\rho_{k}^{2}}}{n-k}$
+~\\ \textbf{Estadístico de prueba:} El estadístico de prueba es: $Q=n(n+2)\sum\limits_{k=1}^{h}\frac{\hat{\rho_{k}^{2}}}{n-k}$
 ~\\ donde n es el tamaño de la muestra, $\displaystyle {\hat {\rho }}_{k}$  es la autocorrelación de la muestra en el retraso k y h es el número de retardos que se están probando.
 ~\\ \textbf{Región de rechazo:} Para un nivel de significancia $\alpha$ la región critica para rechazar la hipótesis de aleatoriedad es: $Q>\chi^{2}_{1-\alpha,h}$
 ~\\donde $\displaystyle \chi _{1-\alpha ,h}^{2}$ es el $\alpha$-cuantil de la distribución chi-cuadrado con m grados de libertad.

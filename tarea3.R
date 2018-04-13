@@ -19,6 +19,7 @@ for (i in 1:length(residuales)) {
   residualesx[i]<-residuales[i-1]
 }
 residualesx[1]=0
+cor(residuales,residualesx)
 #Prueba gráfica:
 x11()
 acf(residuales,ci=0.95,lag.max=200,type = c("correlation"),main="Correlograma de los residuos",ylab="Autocorrelación",xlab="Retardo")
