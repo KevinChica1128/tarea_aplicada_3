@@ -164,18 +164,11 @@ $$Z=\frac{R-\left(\frac{2n_{1}n_{2}}{n_{1}+n_{2}}+1\right)}{\sqrt{\frac{2n_{1}n_
 
 \begin{frame}
 \frametitle{Descripción y resultados de las pruebas aplicadas}
-~\\D varía entre 0 y 4. Si D esta cerca de 0 los errores están correlacionados positivamente. Si D está cerca de 4 entonces la correlación es negativa.
-La distribución de D es simétrica con respecto a 2. Así que un valor de D cercano a 2 indica que no hay correlación de los errores.
 ~\\ \textbf{Región de rechazo:}Para rechazar se utiliza una tabla con lo valores críticos del estadístico, las regiones de rechazo son:
 \begin{itemize}
 \item Si $d < d_{L,\alpha}$ existe evidencia estadística de que los términos de error estén autocorrelacionados positivamente.
 \item Si $d > d_{U,\alpha}$ no hay evidencia estadística de que los términos de error estén autocorrelacionados positivamente.
 \item Si $d_{L,\alpha} < d < d_{U,\alpha}$ la prueba no es concluyente.
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Descripción y resultados de las pruebas aplicadas}
 ~\\ \textbf{Resultado:}
 \begin{figure}[!h]
     \begin{center}
@@ -184,12 +177,13 @@ La distribución de D es simétrica con respecto a 2. Así que un valor de D cer
         \label{fig:Densidad}
     \end{center}
 \end{figure}
+\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Descripción y resultados de las pruebas aplicadas}
 \begin{itemize}
-\item Prueba de Ljung-Box:La prueba de Ljung-Box es un tipo de prueba estadística que evalúa si un grupo cualquiera de autocorrelaciones de una serie de tiempo son diferentes de cero. En lugar de probar la aleatoriedad en cada retardo distinto, esta prueba la aleatoriedad "en general" basado en un número de retardos.
+\item Prueba de Ljung-Box:La prueba de Ljung-Box es un tipo de prueba estadística que evalúa si un grupo cualquiera de autocorrelaciones de una serie de tiempo son diferentes de cero. En lugar de probar la aleatoriedad en cada retardo distinto, esta prueba la aleatoriedad en general basado en un número de retardos.
 ~\\En la prueba de Ljung-Box se puede definir o plantear las hipótesis de la siguiente manera:
 ~\\$H_{0}:$Los datos se distribuyen de forma independiente (es decir, las correlaciones en la población de la que se toma la muestra son 0, de modo que cualquier correlación observada en los datos es el resultado de la aleatoriedad del proceso de muestreo).
 ~\\$H_{1}:$ Los datos no se distribuyen de forma independiente.
@@ -216,8 +210,8 @@ La distribución de D es simétrica con respecto a 2. Así que un valor de D cer
 \end{frame}
 
 \begin{frame}
-\frametitle{Conclusiones sobre nuestro modelo ajustado}
-~\\Teniendo en cuenta las pruebas aplicadas, donde vimos que en la prueba gráfica, muchas barras se nos salen de los intervalos y en las pruebas estadísticas los p valores de las tres pruebas son demasiado bajos llevándonos a rechazar siempre $H_{0}$, concluyendo que los residuos no son independientes, lo más común y razonable es concluir que nuestro modelo ajustado no cumple con este supuesto de independencia en los errores, por lo cuál diríamos que lo recomendable sería no usar este modelo. Sin embargo, los errores podrían ser independientes aún cuando los residuos no lo sean, y el supuesto se hace para los errores mas no para los residuos, pero eso no hay forma de probarlo a ciencia cierta, por lo cuál es mejor prevenir y usar un modelo el cuál por lo menos me muestre dicha independencia en sus residuales.
+\frametitle{Conclusión sobre nuestro modelo ajustado}
+~\\Teniendo en cuenta las pruebas aplicadas, donde vimos que en la prueba gráfica, muchas barras se nos salen de los intervalos y en las pruebas estadísticas los p valores de las tres pruebas son demasiado bajos llevándonos a rechazar siempre $H_{0}$, concluyendo que los residuos no son independientes, lo más común y razonable es concluir que nuestro modelo ajustado no cumple con este supuesto de independencia en los errores, por lo cuál diríamos que lo recomendable sería no usar este modelo. Sin embargo, los errores podrían ser independientes aún cuando los residuos no lo sean, y el supuesto se hace para los errores mas no para los residuos, pero eso no hay forma de probarlo a ciencia cierta, sin embargo hay que tener muy en cuenta los resultados obtenidos y queda a criterio de la persona si ignora estos resultados.
 \end{frame}
 
 
